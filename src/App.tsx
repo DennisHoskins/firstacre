@@ -1,11 +1,11 @@
 import { AppShell } from '@mantine/core';
-import Books from './components/Books';
+import BooksGrid from './components/BooksGrid';
 
 function App() {
   return (
     <AppShell padding="md">
       <AppShell.Main bg="#eee">
-        <Books />
+        <BooksGrid />
       </AppShell.Main>
     </AppShell>
   );

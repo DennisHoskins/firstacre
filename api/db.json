@@ -9,7 +9,12 @@
       "pageCount": 370,
       "firstPublished": "1987-06-08",
       "description": "Paul Sheldon. He's a bestselling novelist who has finally met his biggest fan. Her name is Annie Wilkes and she is more than a rabid reader - she is Paul's nurse, tending his shattered body after an automobile accident. But she is also his captor, keeping him prisoner in her isolated house.",
-      "tags": ["fiction", "horror"],
+      "tags": [
+        "fiction",
+        "horror",
+        "thriller",
+        "king"
+      ],
       "isLoaned": false
     },
     {
@@ -21,7 +26,11 @@
       "pageCount": 497,
       "firstPublished": "1977-01-28",
       "description": "Jack Torrance's new job at the Overlook Hotel is the perfect chance for a fresh start. As the off-season caretaker at the atmospheric old hotel, he'll have plenty of time to spend reconnecting with his family and working on his writing. But as the harsh winter weather sets in, the idyllic location feels ever more remote...and more sinister. And the only one to notice the strange and terrible forces gathering around the Overlook is Danny Torrance, a uniquely gifted five-year-old.",
-      "tags": ["fiction", "horror"],
+      "tags": [
+        "Comedy",
+        "fiction",
+        "romance"
+      ],
       "isLoaned": false
     },
     {
@@ -33,7 +42,10 @@
       "pageCount": 239,
       "firstPublished": "1957-01-01",
       "description": "The summer of '28 was a vintage season for a growing boy. A summer of green apple trees, mowed lawns, and new sneakers. Of half-burnt firecrackers, of gathering dandelions, of Grandma's belly-busting dinner. It was a summer of sorrows and marvels and gold-fuzzed bees. A magical, timeless summer in the life of a twelve-year-old boy named Douglas Spaulding—remembered forever by the incomparable Ray Bradbury.",
-      "tags": ["classics", "science fiction"],
+      "tags": [
+        "classics",
+        "science fiction"
+      ],
       "isLoaned": false
     },
     {
@@ -46,7 +58,13 @@
       "pageCount": 194,
       "firstPublished": "1953-10-19",
       "description": "Guy Montag is a fireman. His job is to destroy the most illegal of commodities, the printed book, along with the houses in which they are hidden. Montag never questions the destruction and ruin his actions produce, returning each day to his bland life and wife, Mildred, who spends all day with her television “family.” But when he meets an eccentric young neighbor, Clarisse, who introduces him to a past where people didn’t live in fear and to a present where one sees the world through the ideas in books instead of the mindless chatter of television, Montag begins to question everything he has ever known.",
-      "tags": ["fiction", "dystopia"],
+      "tags": [
+        "fiction",
+        "dystopia",
+        "science fiction",
+        "horror",
+        "documentary"
+      ],
       "isLoaned": false
     }
   ],
