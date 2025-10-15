@@ -1,8 +1,7 @@
 import {Text } from '@mantine/core';
+import type { Book } from '../../interfaces/Book';
 
-import type { Book } from '../interfaces/Book';
-
-export default function BookDetails({ book } : { book: Book }) {
+export default function Details({ book } : { book: Book }) {
   return (
     <>
       <Text size="xs" c="dimmed">

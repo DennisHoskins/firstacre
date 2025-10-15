@@ -1,15 +1,15 @@
 import {
   Flex,
-  Rating,
+  Rating as MantineRating,
   Text,
 } from '@mantine/core';
 
-import type { Book } from '../interfaces/Book';
+import type { Book } from '../../interfaces/Book';
 
-export default function BookRating({ book } : { book: Book }) {
+export default function Rating({ book } : { book: Book }) {
   return (
       <Flex align="center" gap="lg" wrap="wrap">
-        <Rating value={book.rating} fractions={4} readOnly />
+        <MantineRating value={book.rating} fractions={4} readOnly />
         <Text size="lg" fw={700}>
           {book.rating}
         </Text>

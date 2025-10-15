@@ -7,22 +7,22 @@ import {
   TextInput,
 } from '@mantine/core';
 
-import type { Book } from '../interfaces/Book';
-import { updateBookTags } from '../services/api';
+import type { Book } from '../../interfaces/Book';
+import { updateBookTags } from '../../services/api';
 
-export default function BookTags({ book } : { book: Book }) {
+export default function Tags({ book } : { book: Book }) {
   const [tags, setTags] = useState<string[]>(book.tags);
   const [tagInput, setTagInput] = useState('');
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState<Error>();
+  const [error, setError] = useState<Error | null>(null);
 
   async function addTag(bookId: string, tag?: string | null) {
     if (!tag) return;
     if (loading) return;
     
     const cleanTag = tag.trim().toLowerCase();
-    
     if (!cleanTag) return;
+
     if (!/^[a-z\s-]+$/.test(cleanTag)) {
       // allow letters, spaces, and hyphens only
       setError(new Error('Tags can only contain letters'));
@@ -34,6 +34,7 @@ export default function BookTags({ book } : { book: Book }) {
     }
     
     try {
+      setError(null)
       setLoading(true);
       const newTags = [...tags, cleanTag];
       await updateBookTags(bookId, newTags);
@@ -44,8 +45,6 @@ export default function BookTags({ book } : { book: Book }) {
       setLoading(false);
     }
   }
-
-  if (loading) return <div>Loading data...</div>;
 
   return (
     <>
@@ -62,21 +61,16 @@ export default function BookTags({ book } : { book: Book }) {
             flex="1"
             placeholder="Add new tag"
             value={tagInput}
-            onChange={(e) => setTagInput(e.currentTarget.value)}
+            onChange={(e) => {
+              setTagInput(e.currentTarget.value);
+              setError(null);
+            }}
           />
-          <Button type="submit" color="blue" variant="light">
+          <Button type="submit" color="blue" variant="light" disabled={loading}>
             Add
           </Button>
         </Flex>
       </form>
-
-      <Space h="md" />
-
-      <Flex gap="xs">
-        {tags.map((tag, index) => (
-          <Badge key={index} variant="default">{tag.toUpperCase()}</Badge>
-        ))}
-      </Flex>
 
       {error && (
         <>
@@ -84,6 +78,14 @@ export default function BookTags({ book } : { book: Book }) {
           <div>Error: {error.message}</div>
         </>
       )}
+
+      <Space h="md" />
+
+      <Flex gap="xs">
+        {tags && tags.map((tag, index) => (
+          <Badge key={index} variant="default">{tag.toUpperCase()}</Badge>
+        ))}
+      </Flex>
     </>
   );
 }
